@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>My Restaurant</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" >
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" ></script>
+
+<style>
+	* {
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+	}
+	 .bg {
+		height: 100% ;
+		width: 100%;
+		background-image: url("restaurant2.jpg");
+		 
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		opacity: 0.9;
+	}
+	.box {
+		background-color: rgb(0, 0, 0);
+		padding: 20px;
+		border-radius: 4px;
+		text-align: center;
+		
+	}
+	.box:hover {
+		cursor: pointer;
+		border: 1px solid rgb(192, 192, 192)(192, 192, 192)(128, 128, 128)(128, 128, 128);
+	}
+	.row-1 {
+		margin-top: 165px;
+	}
+	.row-2 {
+		margin-top: 50px;
+	}
+	a span {
+		font-size : 25px;
+		color: rgb(192, 192, 192);
+		
+	}
+	a {
+		text-decoration: none;
+	}
+	a:hover {
+		 
+		color: rgb(255, 128, 255);
+	}
+	.checkout {
+		position: relative;
+	}
+	.checkout1 {
+		position: absolute;
+		right: 50px;
+		top: 5px;
+	}
+	
+</style>
+</head>
+<body class="bg">
+	<h2 class="text-center p-4 bg-dark text-white">Welcome Back</h2>
+	<!--<a class="btn btn-primary" data-toggle="collapse" href="#availableTable" role="button"></a>
+	 <div class="collapse" id="availableTable">
+		<div class="card card-body">
+			<table th:each="status :${availible}">
+				<tr class="border">
+					<th>Table</th>
+					<th>status</th>
+				</tr>
+				<tr class="border">
+					<th th:text="${status.tableId}"></th>
+					<th th:text="${status.isCheckout}"></th>
+				</tr>
+			</table>
+		</div>
+	</div> -->
+	<div class="checkout pt-5">
+	 
+			<form class="checkout1 text-white" th:action="@{/payment}">
+				<h5 style="text-decoration: underline; ">Checkout</h5>
+				<label for="tableId">Select Table To Checkout</label>
+				<input type="number" name="tableId" min="1" max="8" required="required">
+				<input style ="border-radius: 5px" width="90px"  type="submit" value="Next">
+ 			</form>
+	</div>
+	<div class="container">
+	
+	  <div class="row row-1"> 
+			<div class="col-3">
+				<div class="box" >
+					
+					<a  th:href="@{/addmenu/1}"><span>Table-1</span></a>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="box" >
+					
+					<a  th:href=@{/addmenu/2}><span>Table-2</span></a>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="box" >
+					
+					<a  th:href=@{/addmenu/3}><span>Table-3</span></a>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="box" >
+					
+					<a  th:href=@{/addmenu/4}><span>Table-4</span></a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row row-2"> 	
+			<div class="col-3">
+				<div class="box" >
+					
+					<a  th:href=@{/addmenu/5}><span>Table-5</span></a>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="box" >
+					
+					<a  th:href=@{/addmenu/6}><span>Table-6</span></a>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="box" >
+					
+					<a  th:href=@{/addmenu/7}><span>Table-7</span></a>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="box">
+					
+					<a  th:href=@{/addmenu/8}><span>Table-8</span></a>
+				</div>
+			</div>
+		</div> 
+		
+	
+	</div>
+	
+</body>
+</html>
